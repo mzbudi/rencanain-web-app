@@ -1,9 +1,9 @@
 import React from "react";
 
-const Profile = () => {
+const Profile : React.FC = () => {
   return (
-    <div>
-      <span>this is Profile</span>
+    <div className="bg-gray-400 container ">
+      <span>this is profile</span>
     </div>
   );
 };

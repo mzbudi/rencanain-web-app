@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+// import { Link } from "react-router-dom";
 
 const NavbarLayout: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
+
   return (
     <header>
       <nav className="w-full grow bg-white shadow">
-        <div className="justify-between px-2 pb-1 mx-auto lg:max-w-7xl md:items-center md:flex md:px-4">
+        <div className="justify-between px-2 pb-1 mx-auto md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="a">
-                <h2 className="text-2xl font-bold">LOGO</h2>
+                <h2 className="text-2xl font-bold text-gray-600 hover:text-blue-600 cursor-pointer hover:text-blue-600 hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
+                  LOGO
+                </h2>
               </a>
               <div className="md:hidden">
                 <button
@@ -56,17 +60,34 @@ const NavbarLayout: React.FC = () => {
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-gray-600 hover:text-blue-600">
+                <li className="text-gray-600 hover:text-blue-600 cursor-pointer hover:text-blue-600 hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
                   <a href="a">Home</a>
                 </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <a href="a">Blog</a>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <a href="a">About US</a>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
+                <li className="text-gray-600 hover:text-blue-600 cursor-pointer hover:text-blue-600 hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
                   <a href="a">Contact US</a>
+                </li>
+                <li>
+                  <img
+                    className="w-10 h-10 hover:scale-125 rounded-full border-2 border-white shadow-md object-cover object-center bg-gray-100 overflow-hidden outline-none focus:outline-none ease-linear transition-all duration-150 cursor-pointer hover:shadow-lg hover:border-gray-300 hover:bg-gray-200 hover:text-gray-800 hover:opacity-75"
+                    src="https://picsum.photos/200/300"
+                    alt="Rounded avatar"
+                  ></img>
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6 cursor-pointer hover:text-blue-600 hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                    />
+                  </svg>
                 </li>
               </ul>
             </div>

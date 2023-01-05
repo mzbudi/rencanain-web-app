@@ -17,7 +17,7 @@ const listOfItems: Array<string[]> = [
 ];
 
 const SidebarLayout: React.FC = () => {
-  const { collapsed } = useProSidebar();
+  const { collapsed, collapseSidebar } = useProSidebar();
 
   const { pathname } = useLocation();
 
@@ -68,12 +68,21 @@ const SidebarLayout: React.FC = () => {
     }
   };
 
+  console.log("collapsed: ", collapsed);
+
   return (
-    <Sidebar breakPoint="md" transitionDuration={1000} collapsedWidth="60px" className="h-screen">
+    <Sidebar
+      transitionDuration={1000}
+      collapsedWidth="60px"
+      className="h-screen"
+    >
       <div
         className={`${
           collapsed ? "h-20" : "h-40"
         } flex mx-auto justify-center items-center flex-col`}
+        onClick={() => {
+          collapseSidebar();
+        }}
       >
         {sidebarResponsiveImage()}
         {collapsed ? "" : "Rencanain"}

@@ -13,6 +13,9 @@ const AppRouter: React.FC = () => {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/expense-tracker" element={<Profile />} />
+          <Route path="/assets-counter" element={<Profile />} />
+          <Route path="/analytics" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

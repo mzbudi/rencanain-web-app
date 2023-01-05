@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import {
   Sidebar,
   Menu,
@@ -9,23 +10,37 @@ import {
 import { Link } from "react-router-dom";
 
 const listOfItems: Array<string[]> = [
-  ["💵", "Expense Tracker"],
-  ["💎", "Assets Counter"],
-  ["📈", "Stocks"],
-  ["📊", "Analytics"],
-  ["🚪", "Exit"],
+  ["💵", "Expense Tracker", "expense-tracker"],
+  ["💎", "Assets Counter", "assets-counter"],
+  ["📊", "Analytics", "analytics"],
+  ["🚪", "Exit", "logout"],
 ];
 
 const SidebarLayout: React.FC = () => {
   const { collapsed } = useProSidebar();
 
+  const { pathname } = useLocation();
+
   const sidebarMenuItem = (list: Array<string[]>) => {
     return list.map((item: string[], idx: number) => {
       if (collapsed) {
-        return <MenuItem key={idx}> {item[0]} </MenuItem>;
+        return (
+          <MenuItem
+            key={idx}
+            routerLink={<Link to={`/${item[2]}`} />}
+            active={pathname === `/${item[2]}`}
+          >
+            {item[0]}
+          </MenuItem>
+        );
       } else {
         return (
-          <MenuItem prefix={item[0]} key={idx}>
+          <MenuItem
+            prefix={item[0]}
+            key={idx}
+            routerLink={<Link to={`/${item[2]}`} />}
+            active={pathname === `/${item[2]}`}
+          >
             {item[1]}
           </MenuItem>
         );
@@ -33,25 +48,54 @@ const SidebarLayout: React.FC = () => {
     });
   };
 
-  return (
-    <Sidebar breakPoint="md" transitionDuration={1000}>
-      <div className="py-3 px-3 text-center">
+  const sidebarResponsiveImage = () => {
+    if (collapsed) {
+      return (
         <img
-          className="w-16 h-16 rounded-full mx-auto mb-3 border-2 border-white shadow-md object-cover object-center bg-gray-100 overflow-hidden outline-none focus:outline-none ease-linear transition-all duration-150 cursor-pointer hover:shadow-lg hover:border-gray-300 hover:bg-gray-200 hover:text-gray-800 hover:opacity-75"
+          className="w-10 h-10 hover:scale-125 rounded-full border-2 border-white shadow-md object-cover object-center bg-gray-100 overflow-hidden outline-none focus:outline-none ease-linear transition-all duration-150 cursor-pointer hover:shadow-lg hover:border-gray-300 hover:bg-gray-200 hover:text-gray-800 hover:opacity-75"
           src="https://picsum.photos/200/300"
           alt="Rounded avatar"
         ></img>
-        <span className="text-black">Rencanain</span>
+      );
+    } else {
+      return (
+        <img
+          className="w-24 h-24 hover:scale-110 rounded-full border-2 border-white shadow-md object-cover object-center bg-gray-100 overflow-hidden outline-none focus:outline-none ease-linear transition-all duration-150 cursor-pointer hover:shadow-lg hover:border-gray-300 hover:bg-gray-200 hover:text-gray-800 hover:opacity-75"
+          src="https://picsum.photos/200/300"
+          alt="Rounded avatar"
+        ></img>
+      );
+    }
+  };
+
+  return (
+    <Sidebar breakPoint="md" transitionDuration={1000} collapsedWidth="60px">
+      <div
+        className={`${
+          collapsed ? "h-20" : "h-40"
+        } flex mx-auto justify-center items-center flex-col border-b-2 border-gray`}
+      >
+        {sidebarResponsiveImage()}
+        {collapsed ? "" : "Rencanain"}
       </div>
       <Menu>
         <SubMenu
+          defaultOpen
           prefix={collapsed ? "" : "📚"}
           label={collapsed ? "📚" : "Dashboard"}
         >
-          <MenuItem prefix="📚" routerLink={<Link to="/" />}>
+          <MenuItem
+            prefix="📚"
+            routerLink={<Link to="/" />}
+            active={pathname === "/"}
+          >
             Dashboard
           </MenuItem>
-          <MenuItem prefix="⛹️‍♂️&nbsp;" routerLink={<Link to={"/profile"} />}>
+          <MenuItem
+            prefix="⛹️‍♂️&nbsp;"
+            routerLink={<Link to={"/profile"} />}
+            active={pathname === "/profile"}
+          >
             Profile
           </MenuItem>
         </SubMenu>

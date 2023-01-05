@@ -11,7 +11,7 @@ const NavbarLayout: React.FC = () => {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="a">
-                <h2 className="text-2xl font-bold text-gray-600 hover:text-blue-600 cursor-pointer hover:text-blue-600 hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
+                <h2 className="text-2xl font-bold text-gray-600 cursor-pointer hover:text-blue-600 hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
                   LOGO
                 </h2>
               </a>
@@ -60,10 +60,10 @@ const NavbarLayout: React.FC = () => {
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-gray-600 hover:text-blue-600 cursor-pointer hover:text-blue-600 hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
+                <li className="text-gray-600 hover:text-blue-600 cursor-pointer hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
                   <a href="a">Home</a>
                 </li>
-                <li className="text-gray-600 hover:text-blue-600 cursor-pointer hover:text-blue-600 hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
+                <li className="text-gray-600 hover:text-blue-600 cursor-pointer hover:scale-125 ease-linear transition-all duration-150 outline-none focus:outline-none">
                   <a href="a">Contact US</a>
                 </li>
                 <li>

@@ -69,11 +69,11 @@ const SidebarLayout: React.FC = () => {
   };
 
   return (
-    <Sidebar breakPoint="md" transitionDuration={1000} collapsedWidth="60px">
+    <Sidebar breakPoint="md" transitionDuration={1000} collapsedWidth="60px" className="h-screen">
       <div
         className={`${
           collapsed ? "h-20" : "h-40"
-        } flex mx-auto justify-center items-center flex-col border-b-2 border-gray`}
+        } flex mx-auto justify-center items-center flex-col`}
       >
         {sidebarResponsiveImage()}
         {collapsed ? "" : "Rencanain"}

@@ -5,15 +5,17 @@ import NavbarLayout from "./NavbarLayout";
 
 const MainLayout: React.FC = () => {
   return (
-    <div className="flex h-screen min-h-screen">
-      <SidebarLayout />
-      {/* <div className="flex h-screen min-h-screen flex-col">
-        <NavbarLayout /> */}
-      <main className="px-8">
-        <Outlet />
-      </main>
+    <div className="flex flex-col">
+      <div className="flex flex-row">
+        <SidebarLayout />
+        <div className="flex flex-col flex-1">
+          <NavbarLayout />
+          <main className="px-8 py-8">
+            <Outlet />
+          </main>
+        </div>
+      </div>
     </div>
-    // </div>
   );
 };
 

@@ -5,7 +5,7 @@ import { useProSidebar } from "react-pro-sidebar";
 const Dashboard: React.FC = () => {
   const { collapseSidebar } = useProSidebar();
   return (
-    <div className="container mx-8 h-screen min-h-screen">
+    <div className="container">
       <div>
         <Link to="profile">Profile</Link>
         <span className="mx-4">|</span>

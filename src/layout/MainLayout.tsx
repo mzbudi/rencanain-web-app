@@ -10,7 +10,7 @@ const MainLayout: React.FC = () => {
         <SidebarLayout />
         <div className="flex flex-col flex-1">
           <NavbarLayout />
-          <main className="px-8 py-8">
+          <main>
             <Outlet />
           </main>
         </div>

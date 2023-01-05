@@ -6,7 +6,7 @@ const NavbarLayout: React.FC = () => {
 
   return (
     <header>
-      <nav className="w-full grow bg-white shadow">
+      <nav className="w-full grow shadow bg-neutral-50">
         <div className="justify-between px-2 pb-1 mx-auto md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">

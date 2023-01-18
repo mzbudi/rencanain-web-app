@@ -30,7 +30,7 @@ const MenuCard: React.FC<MenuCardProps> = ({ name, price }) => {
           {rupiah(price)}
         </p>
 
-        <button className="bg-gray-300 mt-2 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-[4px]">
+        <button className="bg-primary mt-2 hover:bg-borderPrimary focus:outline-none text-gray-800 font-bold py-2 px-4 rounded-[4px]">
           Add to cart
         </button>
       </div>

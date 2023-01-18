@@ -7,11 +7,9 @@ const MainLayout: React.FC = () => {
   return (
     <div className="flex h-screen">
       <SidebarLayout />
-      <div className="flex flex-col flex-1 h-screen">
+      <div className="flex flex-col flex-1 h-full">
         <NavbarLayout />
-        <main className="h-full overflow-y-auto">
-          <Outlet />
-        </main>
+        <Outlet />
       </div>
     </div>
   );

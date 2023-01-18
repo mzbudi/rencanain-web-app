@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const listOfItems: Array<string[]> = [
   ["💵", "Expense Tracker", "expense-tracker"],
+  ["🍔", "Menu", "menu"],
   ["💎", "Assets Counter", "assets-counter"],
   ["📊", "Analytics", "analytics"],
   ["🚪", "Exit", "logout"],
